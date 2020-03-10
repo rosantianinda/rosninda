@@ -53,7 +53,7 @@
       
         
         
-        <meta name="theme-color" content="#757575">
+        <meta name="theme-color" content="#e91e63">
       
     
     
@@ -77,7 +77,7 @@
   
     
     
-    <body dir="ltr" data-md-color-primary="grey" data-md-color-accent="pink">
+    <body dir="ltr" data-md-color-primary="pink" data-md-color-accent="pink">
   
     <svg class="md-svg">
       <defs>
@@ -311,8 +311,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#menyusun-algoritma-dan-pemrograman-newton-rhapson" class="md-nav__link">
-    Menyusun Algoritma dan Pemrograman Newton Rhapson
+  <a href="#algoritma-dan-pemrograman-newton-rhapson" class="md-nav__link">
+    Algoritma dan Pemrograman Newton Rhapson
   </a>
   
 </li>
@@ -369,8 +369,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#menyusun-algoritma-dan-pemrograman-newton-rhapson" class="md-nav__link">
-    Menyusun Algoritma dan Pemrograman Newton Rhapson
+  <a href="#algoritma-dan-pemrograman-newton-rhapson" class="md-nav__link">
+    Algoritma dan Pemrograman Newton Rhapson
   </a>
   
 </li>
@@ -406,7 +406,7 @@
                 
                 <h1 id="newton-raphson">Newton Raphson</h1>
 <h2 id="metode-newton-raphson">Metode Newton Raphson</h2>
-<p>Metode Newton Raphson biasa digunakan dalam mencari akar dari suatu persamaan non linier, jika diasumsikan f mempunyai turunan kontinu f'. Metode Newton Raphson merupakan salah satu metode terpopuler untuk menghampiri penyelesaian f(x)=0 secara iteratif.  Metode ini dianggap  lebih mudah dari Metode Bagi Dua (Bisection Method) karena metode ini menggunakan pendekatan satu titik sebagai titik awal. Semakin dekat titik awal yang kita pilih dengan akar sebenarnya, maka semakin cepat konvergen ke akarnya.</p>
+<p><strong>Metode Newton Raphson</strong> biasa digunakan dalam mencari akar dari suatu persamaan non linier, jika diasumsikan f mempunyai turunan kontinu f'. Metode Newton Raphson merupakan salah satu metode terpopuler untuk menghampiri penyelesaian f(x)=0 secara iteratif.  Metode ini dianggap  lebih mudah dari Metode Bagi Dua (Bisection Method) karena metode ini menggunakan pendekatan satu titik sebagai titik awal. Semakin dekat titik awal yang kita pilih dengan akar sebenarnya, maka semakin cepat konvergen ke akarnya.</p>
 <p><img alt="newton raphson" src="..\assets\images\newton-raphson.jpg" /></p>
 <p>Prosedur Metode Newton :</p>
 <p>menentukan <em>$x_0$</em> sebagai titik awal, kemudian menarik garis lurus (misal garis $\imath$ ) yang menyinggung titik <em>$f(x_0)$</em> . Hal ini berakibat garis $\imath$ memotong sumbu <em>$x$</em> di titik <em>$x_1$</em> Setelah itu diulangi langkah sebelumnya tapi sekarang <em>$x_1$</em> dianggap sebagai titik awalnya. Dari mengulang langkah-langkah sebelumnya akan mendapatkan <em>$x_2 , x_3 , ... , x_n$</em> dengan <em>$x_n$</em> yang diperoleh adalah bilangan riil yang merupakan akar atau mendekati akar yang sebenarnya.</p>
@@ -428,8 +428,8 @@ $$
 x_1 = x_0 - \frac{f(x_0)}{f'(x_0)} , x_2 = x_1 - \frac{f(x_1)}{f'(x_1)}, ... , x_n = x_{n-1} - \frac{f(x_{n-1})}{f'(x_{n-1})}
 $$</p>
 <hr />
-<h3 id="menyusun-algoritma-dan-pemrograman-newton-rhapson"><strong>Menyusun Algoritma dan Pemrograman Newton Rhapson</strong></h3>
-<p>dari rumus yang kita dapat diatas kita dapat menyusun sebuah algoritma yang nantinya akan dibuat menjadi sebuah program. Algoritma menyusun akar - akar <em>$f(x) = 0$</em> sebagai berikut :</p>
+<h3 id="algoritma-dan-pemrograman-newton-rhapson"><strong>Algoritma dan Pemrograman Newton Rhapson</strong></h3>
+<p>Dari rumus yang kita dapat diatas kita dapat menyusun sebuah algoritma yang nantinya akan dibuat menjadi sebuah program. Algoritma menyusun akar - akar <em>$f(x) = 0$</em> sebagai berikut :</p>
 <ol>
 <li>Didefinisikan fungsi <em>$f$</em> dengan <em>$f(x)$</em> dan <em>$f'(x)$</em></li>
 <li>Ditentukan Epsilon sebagai Toleransi kesalahan serta iterasi maksimum untuk <em>Stopping Condition</em></li>
@@ -441,7 +441,6 @@ $$</p>
 </ol>
 <hr />
 <h3 id="implementasi-pemrograman"><strong>Implementasi Pemrograman</strong></h3>
-<p>dari algoritma diatas , kita dapat menyusun sebuah program seperti berikut.</p>
 <pre><code class="python">import math
 e = 2.71828
 

@@ -71,6 +71,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -159,7 +184,7 @@
 
   
 
-<a href="https://github.com/rosantianinda/rosninda" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/rosantianinda/rosninda/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -230,7 +255,7 @@
 
   
 
-<a href="https://github.com/rosantianinda/rosninda" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/rosantianinda/rosninda/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -403,23 +428,25 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/rosantianinda/rosninda/edit/master/docs/tugas2.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
-                <h1 id="newton-raphson">Newton Raphson</h1>
-<h2 id="metode-newton-raphson">Metode Newton Raphson</h2>
-<p><strong>Metode Newton Raphson</strong> biasa digunakan dalam mencari akar dari suatu persamaan non linier, jika diasumsikan f mempunyai turunan kontinu f'. Metode Newton Raphson merupakan salah satu metode terpopuler untuk menghampiri penyelesaian f(x)=0 secara iteratif.  Metode ini dianggap  lebih mudah dari Metode Bagi Dua (Bisection Method) karena metode ini menggunakan pendekatan satu titik sebagai titik awal. Semakin dekat titik awal yang kita pilih dengan akar sebenarnya, maka semakin cepat konvergen ke akarnya.</p>
+                
+                <h1 id="newton-raphson">Newton Raphson<a class="headerlink" href="#newton-raphson" title="Permanent link">&para;</a></h1>
+<h2 id="metode-newton-raphson">Metode Newton Raphson<a class="headerlink" href="#metode-newton-raphson" title="Permanent link">&para;</a></h2>
+<p><strong>Metode Newton Raphson</strong> biasa digunakan dalam mencari akar dari suatu persamaan non linier, jika diasumsikan <em><span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span></em> mempunyai turunan kontinu <em><span><span class="MathJax_Preview">f'*. Metode Newton Raphson merupakan salah satu metode terpopuler untuk menghampiri penyelesaian *</span><script type="math/tex">f'*. Metode Newton Raphson merupakan salah satu metode terpopuler untuk menghampiri penyelesaian *</script></span>f(x)=0$</em> secara iteratif.  Metode ini dianggap  lebih mudah dari Metode Bagi Dua (Bisection Method) karena metode ini menggunakan pendekatan satu titik sebagai titik awal. Semakin dekat titik awal yang kita pilih dengan akar sebenarnya, maka semakin cepat konvergen ke akarnya.</p>
 <p><img alt="newton raphson" src="..\assets\images\newton-raphson.jpg" /></p>
 <p>Prosedur Metode Newton :</p>
-<p>menentukan <em>$x_0$</em> sebagai titik awal, kemudian menarik garis lurus (misal garis $\imath$ ) yang menyinggung titik <em>$f(x_0)$</em> . Hal ini berakibat garis $\imath$ memotong sumbu <em>$x$</em> di titik <em>$x_1$</em> Setelah itu diulangi langkah sebelumnya tapi sekarang <em>$x_1$</em> dianggap sebagai titik awalnya. Dari mengulang langkah-langkah sebelumnya akan mendapatkan <em>$x_2 , x_3 , ... , x_n$</em> dengan <em>$x_n$</em> yang diperoleh adalah bilangan riil yang merupakan akar atau mendekati akar yang sebenarnya.</p>
+<p>menentukan <em><span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span></em> sebagai titik awal, kemudian menarik garis lurus (misal garis <span><span class="MathJax_Preview">\imath</span><script type="math/tex">\imath</script></span> ) yang menyinggung titik <em><span><span class="MathJax_Preview">f(x_0)</span><script type="math/tex">f(x_0)</script></span></em> . Hal ini berakibat garis <span><span class="MathJax_Preview">\imath</span><script type="math/tex">\imath</script></span> memotong sumbu <em><span><span class="MathJax_Preview">x</span><script type="math/tex">x</script></span></em> di titik <em><span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span></em> Setelah itu diulangi langkah sebelumnya tapi sekarang <em><span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span></em> dianggap sebagai titik awalnya. Dari mengulang langkah-langkah sebelumnya akan mendapatkan <em><span><span class="MathJax_Preview">x_2 , x_3 , ... , x_n</span><script type="math/tex">x_2 , x_3 , ... , x_n</script></span></em> dengan <em><span><span class="MathJax_Preview">x_n</span><script type="math/tex">x_n</script></span></em> yang diperoleh adalah bilangan riil yang merupakan akar atau mendekati akar yang sebenarnya.</p>
 <p>Perhatikan gambar diatas untuk menurunkan rumus <strong>Metode Newton-Raphson</strong></p>
-<p>persamaan garis $\imath : y - y_0 = m(x - x_0)$
+<p>persamaan garis <span><span class="MathJax_Preview">\imath : y - y_0 = m(x - x_0)</span><script type="math/tex">\imath : y - y_0 = m(x - x_0)</script></span>
 $$
 y - f(x_0) = f'(x_0)(x - x_0)
 $$
-<em>$x_1$</em> perpotongan garis $\imath$ dengan sumbu - <em>x</em>
+<em><span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span></em> perpotongan garis <span><span class="MathJax_Preview">\imath</span><script type="math/tex">\imath</script></span> dengan sumbu - <em>x</em>
 $$
 0 - f(x_0) = f'(x_0)(x - x_0)
 $$
-<em>y = 0</em> dan <em>x = $x_1$</em> maka koordinat titik (<em>$x_1$</em>,0)
+<em>y = 0</em> dan <em>x = <span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span></em> maka koordinat titik (<em><span><span class="MathJax_Preview">x_1</span><script type="math/tex">x_1</script></span></em>,0)
 $$
 - \frac{f(x_0)}{f'(x_0)} = (x_1 - x_0)
 $$
@@ -428,70 +455,73 @@ $$
 x_1 = x_0 - \frac{f(x_0)}{f'(x_0)} , x_2 = x_1 - \frac{f(x_1)}{f'(x_1)}, ... , x_n = x_{n-1} - \frac{f(x_{n-1})}{f'(x_{n-1})}
 $$</p>
 <hr />
-<h3 id="algoritma-dan-pemrograman-newton-rhapson"><strong>Algoritma dan Pemrograman Newton Rhapson</strong></h3>
-<p>Dari rumus yang kita dapat diatas kita dapat menyusun sebuah algoritma yang nantinya akan dibuat menjadi sebuah program. Algoritma menyusun akar - akar <em>$f(x) = 0$</em> sebagai berikut :</p>
+<h3 id="algoritma-dan-pemrograman-newton-rhapson"><strong>Algoritma dan Pemrograman Newton Rhapson</strong><a class="headerlink" href="#algoritma-dan-pemrograman-newton-rhapson" title="Permanent link">&para;</a></h3>
+<p>Dari rumus yang kita dapat diatas kita dapat menyusun sebuah algoritma yang nantinya akan dibuat menjadi sebuah program. Algoritma menyusun akar - akar <em><span><span class="MathJax_Preview">f(x) = 0</span><script type="math/tex">f(x) = 0</script></span></em> sebagai berikut :</p>
 <ol>
-<li>Didefinisikan fungsi <em>$f$</em> dengan <em>$f(x)$</em> dan <em>$f'(x)$</em></li>
+<li>Didefinisikan fungsi <em><span><span class="MathJax_Preview">f</span><script type="math/tex">f</script></span></em> dengan <em><span><span class="MathJax_Preview">f(x)</span><script type="math/tex">f(x)</script></span></em> dan <em><span><span class="MathJax_Preview">f'(x)</span><script type="math/tex">f'(x)</script></span></em></li>
 <li>Ditentukan Epsilon sebagai Toleransi kesalahan serta iterasi maksimum untuk <em>Stopping Condition</em></li>
-<li>Dipilih tebakan awal <em>$x_0$</em> </li>
-<li>Dihitung <em>f($x_0$)</em> dan <em>f'($x_0$)</em></li>
-<li>Dihitung <em>$x_b = x_0 - \frac{f(x_0)}{f'(x_0)}f'(x_0) \neq 0$</em> .  jika <em>$f'(x_0) = 0$</em> kembali ke langkah - 3</li>
-<li>Jika <em>$\left | x_b - x_0 \right | &lt; \varepsilon$</em> . itersasi lebih dari iterasi maksimum tulis <em>$x_{hampiran} = x_b$</em> sebagai hasil hampiran akar; jika tidak, lanjutkan ke langkah berikutnya.</li>
-<li>Ganti nilai <em>$x_0$</em> dengan <em>$x_0 = x_b$</em> dan kembali ke langkah-4</li>
+<li>Dipilih tebakan awal <em><span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span></em> </li>
+<li>Dihitung <em>f(<span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>)</em> dan <em>f'(<span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span>)</em></li>
+<li>Dihitung <em><span><span class="MathJax_Preview">x_b = x_0 - \frac{f(x_0)}{f'(x_0)}f'(x_0) \neq 0</span><script type="math/tex">x_b = x_0 - \frac{f(x_0)}{f'(x_0)}f'(x_0) \neq 0</script></span></em> .  jika <em><span><span class="MathJax_Preview">f'(x_0) = 0</span><script type="math/tex">f'(x_0) = 0</script></span></em> kembali ke langkah - 3</li>
+<li>Jika <em><span><span class="MathJax_Preview">\left | x_b - x_0 \right | &lt; \varepsilon</span><script type="math/tex">\left | x_b - x_0 \right | < \varepsilon</script></span></em> . itersasi lebih dari iterasi maksimum tulis <em><span><span class="MathJax_Preview">x_{hampiran} = x_b</span><script type="math/tex">x_{hampiran} = x_b</script></span></em> sebagai hasil hampiran akar; jika tidak, lanjutkan ke langkah berikutnya.</li>
+<li>Ganti nilai <em><span><span class="MathJax_Preview">x_0</span><script type="math/tex">x_0</script></span></em> dengan <em><span><span class="MathJax_Preview">x_0 = x_b</span><script type="math/tex">x_0 = x_b</script></span></em> dan kembali ke langkah-4</li>
 </ol>
 <hr />
-<h3 id="implementasi-pemrograman"><strong>Implementasi Pemrograman</strong></h3>
-<pre><code class="python">import math
-e = 2.71828
+<h3 id="implementasi-pemrograman"><strong>Implementasi Pemrograman</strong><a class="headerlink" href="#implementasi-pemrograman" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">e</span> <span class="o">=</span> <span class="mf">2.71828</span>
 
-def fungsi(x):
-    x = float((e**x) - (4*x))
-    return x
+<span class="k">def</span> <span class="nf">fungsi</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">e</span><span class="o">**</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span>
 
-def fungsiturunan(x):
-    x = float((e**x) - (4))
-    return x
+<span class="k">def</span> <span class="nf">fungsiturunan</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">((</span><span class="n">e</span><span class="o">**</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="p">(</span><span class="mi">4</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span>
 
-x = float(input('Masukkan nilai awal = '))
-error = float(input('Masukkan nilai error = '))
-perulangan = int(input('Masukkan maksimal pengulangan = '))
+<span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan nilai awal = &#39;</span><span class="p">))</span>
+<span class="n">error</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan nilai error = &#39;</span><span class="p">))</span>
+<span class="n">perulangan</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Masukkan maksimal pengulangan = &#39;</span><span class="p">))</span>
 
-iterasi = 0
-selisih = error+1
-while iterasi &lt;= perulangan  and selisih&gt;error :
-    iterasi += 1
-    f_2 = x - (fungsi(x)/fungsiturunan(x))
-    selisih = math.fabs(f_2 - x)
-    x = f_2
-    print(&quot;Iterasi ke = &quot;,iterasi,&quot;, x = &quot;,f_2, &quot;, f(&quot;,f_2,&quot;) = &quot;,fungsi(f_2),&quot;, selisih = &quot;,error)
-    if iterasi &lt;= perulangan:
-        print(&quot;Perulangan Mencapai Batas Maksimal dengan hasil = &quot;, f_2)
-    else :
-        print(&quot;Toleransi tidak terpenuhi&quot;)
+<span class="n">iterasi</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">selisih</span> <span class="o">=</span> <span class="n">error</span><span class="o">+</span><span class="mi">1</span>
+<span class="k">while</span> <span class="n">iterasi</span> <span class="o">&lt;=</span> <span class="n">perulangan</span>  <span class="ow">and</span> <span class="n">selisih</span><span class="o">&gt;</span><span class="n">error</span> <span class="p">:</span>
+    <span class="n">iterasi</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">f_2</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="p">(</span><span class="n">fungsi</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="n">fungsiturunan</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">selisih</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">fabs</span><span class="p">(</span><span class="n">f_2</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">f_2</span>
+    <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Iterasi ke = &quot;</span><span class="p">,</span><span class="n">iterasi</span><span class="p">,</span><span class="s2">&quot;, x = &quot;</span><span class="p">,</span><span class="n">f_2</span><span class="p">,</span> <span class="s2">&quot;, f(&quot;</span><span class="p">,</span><span class="n">f_2</span><span class="p">,</span><span class="s2">&quot;) = &quot;</span><span class="p">,</span><span class="n">fungsi</span><span class="p">(</span><span class="n">f_2</span><span class="p">),</span><span class="s2">&quot;, selisih = &quot;</span><span class="p">,</span><span class="n">error</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">iterasi</span> <span class="o">&lt;=</span> <span class="n">perulangan</span><span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Perulangan Mencapai Batas Maksimal dengan hasil = &quot;</span><span class="p">,</span> <span class="n">f_2</span><span class="p">)</span>
+    <span class="k">else</span> <span class="p">:</span>
+        <span class="k">print</span><span class="p">(</span><span class="s2">&quot;Toleransi tidak terpenuhi&quot;</span><span class="p">)</span>
+</pre></div>
 
-</code></pre>
 
 <p>Dengan Output sebagai berikut :</p>
-<pre><code class="python">Masukkan nilai awal = 0.57
-Masukkan nilai error = 0.001
-Masukkan maksimal pengulangan = 5
-Iterasi ke =  1 , x =  0.3407012967608656 , f( 0.3407012967608656 ) =  0.043127712081199254 , selisih =  0.001
-Perulangan Mencapai Batas Maksimal dengan hasil =  0.3407012967608656
-Iterasi ke =  2 , x =  0.35732681584117243 , f( 0.35732681584117243 ) =  0.00019537078323272894 , selisih =  0.001
-Perulangan Mencapai Batas Maksimal dengan hasil =  0.35732681584117243
-Iterasi ke =  3 , x =  0.35740282089211245 , f( 0.35740282089211245 ) =  4.055968005900468e-09 , selisih =  0.001
-Perulangan Mencapai Batas Maksimal dengan hasil =  0.35740282089211245
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">Masukkan</span> <span class="n">nilai</span> <span class="n">awal</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Masukkan</span> <span class="n">nilai</span> <span class="n">error</span> <span class="o">=</span> <span class="mf">0.0001</span>
+<span class="n">Masukkan</span> <span class="n">maksimal</span> <span class="n">pengulangan</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">1</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">0.3333333333333333</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">0.3333333333333333</span> <span class="p">)</span> <span class="o">=</span>  <span class="mf">0.06227877883196098</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.0001</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">0.3333333333333333</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">2</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">0.35724635301940616</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">0.35724635301940616</span> <span class="p">)</span> <span class="o">=</span>  <span class="mf">0.0004022049593612742</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.0001</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">0.35724635301940616</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">3</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">0.35740281572145605</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">0.35740281572145605</span> <span class="p">)</span> <span class="o">=</span>  <span class="mf">1.734656973617632e-08</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.0001</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">0.35740281572145605</span>
+<span class="n">Iterasi</span> <span class="n">ke</span> <span class="o">=</span>  <span class="mi">4</span> <span class="p">,</span> <span class="n">x</span> <span class="o">=</span>  <span class="mf">0.3574028224700733</span> <span class="p">,</span> <span class="n">f</span><span class="p">(</span> <span class="mf">0.3574028224700733</span> <span class="p">)</span> <span class="o">=</span>  <span class="o">-</span><span class="mf">6.439293542825908e-15</span> <span class="p">,</span> <span class="n">selisih</span> <span class="o">=</span>  <span class="mf">0.0001</span>
+<span class="n">Perulangan</span> <span class="n">Mencapai</span> <span class="n">Batas</span> <span class="n">Maksimal</span> <span class="n">dengan</span> <span class="n">hasil</span> <span class="o">=</span>  <span class="mf">0.3574028224700733</span>
+</pre></div>
+
 
 <p>Penjelasan :</p>
 <ol>
 <li>Importh Library math</li>
-<li>karena kita menggunakan contoh fungsi <em>$f(x) = e^x - 4X$</em> maka kita membuat sebuah fungsi yang sesuai , dan juga fungsi turunannya yaitu <em>$f'(x) = e^x - 4$</em></li>
+<li>karena kita menggunakan contoh fungsi <em><span><span class="MathJax_Preview">f(x) = e^x - 4X</span><script type="math/tex">f(x) = e^x - 4X</script></span></em> maka kita membuat sebuah fungsi yang sesuai , dan juga fungsi turunannya yaitu <em><span><span class="MathJax_Preview">f'(x) = e^x - 4</span><script type="math/tex">f'(x) = e^x - 4</script></span></em></li>
 <li>Membuat sebuah inputan untuk X , Error / Epsilon , serta Maksimal perulangan untuk stopping condition</li>
 <li>lalu deklarasikan iterasi = 0 untuk perulangan yang ke 0  nantinya dan akan ditambah setiap kali perulangan</li>
-<li>deklarasikan selisih untuk <em>$x_b - x_0$</em>  untuk perbandingan</li>
+<li>deklarasikan selisih untuk <em><span><span class="MathJax_Preview">x_b - x_0</span><script type="math/tex">x_b - x_0</script></span></em>  untuk perbandingan</li>
 <li>lakukan perulangan dengan kondisi iterasi kurang dari sama dengan inputan maksimal iterasi dan selisih lebih dari error / epsilon</li>
-<li>hitung <em>$x_b$</em> dengan rumus yang sudah kita dapatkan sebelumnya</li>
+<li>hitung <em><span><span class="MathJax_Preview">x_b</span><script type="math/tex">x_b</script></span></em> dengan rumus yang sudah kita dapatkan sebelumnya</li>
 <li>lalu lakukan perbandingan jika mencapai nilai <em>True</em> maka toleransi tidak terpenuhi namun perulangan sudah mencapai batas</li>
 <li>jika pengecekan selisih &gt; error bernilai bernilai <em>True</em> maka toleransi akan terpenuhi dengan nilai error serta fungsi x pada iterasi ke n</li>
 </ol>

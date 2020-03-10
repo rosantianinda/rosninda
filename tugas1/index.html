@@ -71,6 +71,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-XXXXXXXX-X", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -159,7 +184,7 @@
 
   
 
-<a href="https://github.com/rosantianinda/rosninda" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/rosantianinda/rosninda/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -230,7 +255,7 @@
 
   
 
-<a href="https://github.com/rosantianinda/rosninda" title="Go to repository" class="md-source" data-md-source="github">
+<a href="https://github.com/rosantianinda/rosninda/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
@@ -417,9 +442,11 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="https://github.com/rosantianinda/rosninda/edit/master/docs/tugas1.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
-                <h1 id="pendekatan-deret-maclaurin">Pendekatan Deret MacLaurin</h1>
-<h2 id="deret-maclaurin">DERET MacLaurin</h2>
+                
+                <h1 id="pendekatan-deret-maclaurin">Pendekatan Deret MacLaurin<a class="headerlink" href="#pendekatan-deret-maclaurin" title="Permanent link">&para;</a></h1>
+<h2 id="deret-maclaurin">DERET MacLaurin<a class="headerlink" href="#deret-maclaurin" title="Permanent link">&para;</a></h2>
 <p><em>DERET MacLaurin</em> adalah Suatu fungsi f(x) yang memiliki turunan <em>f'(x), f''(x), f'''(x)</em> dan seterusnya yang kontinyu dalam interval I dengan <em>a, x I</em> maka untuk <em>x</em> disekitar <em>a</em> yaitu <em>|x-a|&lt;</em>R , <em>f(x)</em> dapat diekspansi kedalam Deret Taylor.</p>
 <p>Dalam kasus khusus jika <em>a=0</em>, maka disebut <em>Deret MacLaurin</em> atau sering disebut Deret Taylor baku. Dan didefinisikan sebagai berikut </p>
 <p>Definisi :
@@ -432,9 +459,9 @@ f(x)=\sum_{n=0}^\infty \frac{f^{(n)}n(0)}{n!}x^{n}
 $$
 Deret MacLaurin sangat bermanfaat dalam metode numerik untuk menghitung atau menghampiri nilai-nilai fungsi yang sudah dihitung secara manual seperti nilai <em>sin x, cos x</em>, eksponensial, dll. Tentu kita tidak akan bisa menghitung nilai-nilai fungsi tersebut tanpa menggunakan bantuan kalkulator atau tabel. Dalam tulisan ini saya akan mencoba untuk mendekati fungsi-fungsi tersebut menggunakan Deret 
 MacLaurin.</p>
-<h2 id="tugas">Tugas</h2>
+<h2 id="tugas">Tugas<a class="headerlink" href="#tugas" title="Permanent link">&para;</a></h2>
 <p>Hitunglah e^2x untuk nilai x=4, kemudian expensikan hingga selisih yang dihasilkan kurang dari nilai error yang ditentukan yaitu e &lt; 0,001.</p>
-<h3 id="penyelesaian">Penyelesaian</h3>
+<h3 id="penyelesaian">Penyelesaian<a class="headerlink" href="#penyelesaian" title="Permanent link">&para;</a></h3>
 <p>Fungsi awal exponen :
 $$
 f(x) = e^{2x}\ 
@@ -450,21 +477,46 @@ $$
 $$
 f^1(a)=2e^{2x}
 $$</p>
-<p>$$
+<div>
+<div class="MathJax_Preview">
 f^2(a)=4e^{2x}
-$$</p>
-<p>$$
+</div>
+<script type="math/tex; mode=display">
+f^2(a)=4e^{2x}
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
 f^3(a)=8e^{2x}
-$$</p>
-<p>$$
+</div>
+<script type="math/tex; mode=display">
+f^3(a)=8e^{2x}
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
 f^4(a)=16e^{2x}
-$$</p>
-<p>$$
+</div>
+<script type="math/tex; mode=display">
+f^4(a)=16e^{2x}
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
 ...
-$$</p>
-<p>$$
+</div>
+<script type="math/tex; mode=display">
+...
+</script>
+</div>
+<div>
+<div class="MathJax_Preview">
 f^n(a)=2^{n}e^{2x}
-$$</p>
+</div>
+<script type="math/tex; mode=display">
+f^n(a)=2^{n}e^{2x}
+</script>
+</div>
 <p>Berikut adalah penyelesaian untuk mencari nilai expansi :
 $$
 f(x)=f(0)+\frac{f^{1}(0)}{1 !} x+\frac{f^{2}(0)}{2 !} x^{2}+\frac{f^{3}(0)}{3 !} x^{3}+\frac{f^{4}(0)}{4 !} x^{4} + ...+\frac{f^{n}(0)}{n !} x^{n} :
@@ -478,57 +530,59 @@ $$
 f(x)=1+\frac{2}{1 !} 4+\frac{4}{2 !} 4^{2}+\frac{8}{3 !} 4^{3}+\frac{16}{4 !} 4^{4} + ...+\frac{2^{n}}{n !} 4^{n}
 $$
 perhitungan diatas akan terus menerus berulang hingga nilai selisih mendekati nilai error yang ditentukan yaitu kurang dari 0,001</p>
-<h3 id="listing-program">Listing Program</h3>
+<h3 id="listing-program">Listing Program<a class="headerlink" href="#listing-program" title="Permanent link">&para;</a></h3>
 <p>Script</p>
-<pre><code class="python">import math
+<div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 
-error = 0.001
-def f(x):
-    f_turunan = 1
-    current=i=0
-    iteration = True
-    while iteration:
-        old= current
-        current += (f_turunan*(x**i))/math.factorial(i)
-        print('f ke-', i,'=',current, 'Ea=', current-old )
-        if current-old &lt; error:
-            iteration = False
-        else:
-            f_turunan *=2
-            i +=1
+<span class="n">error</span> <span class="o">=</span> <span class="mf">0.001</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">f_turunan</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">current</span><span class="o">=</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">iteration</span> <span class="o">=</span> <span class="bp">True</span>
+    <span class="k">while</span> <span class="n">iteration</span><span class="p">:</span>
+        <span class="n">old</span><span class="o">=</span> <span class="n">current</span>
+        <span class="n">current</span> <span class="o">+=</span> <span class="p">(</span><span class="n">f_turunan</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="n">i</span><span class="p">))</span><span class="o">/</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="k">print</span><span class="p">(</span><span class="s1">&#39;f ke-&#39;</span><span class="p">,</span> <span class="n">i</span><span class="p">,</span><span class="s1">&#39;=&#39;</span><span class="p">,</span><span class="n">current</span><span class="p">,</span> <span class="s1">&#39;Ea=&#39;</span><span class="p">,</span> <span class="n">current</span><span class="o">-</span><span class="n">old</span> <span class="p">)</span>
+        <span class="k">if</span> <span class="n">current</span><span class="o">-</span><span class="n">old</span> <span class="o">&lt;</span> <span class="n">error</span><span class="p">:</span>
+            <span class="n">iteration</span> <span class="o">=</span> <span class="bp">False</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">f_turunan</span> <span class="o">*=</span><span class="mi">2</span>
+            <span class="n">i</span> <span class="o">+=</span><span class="mi">1</span>
 
-f(4)
-</code></pre>
+<span class="n">f</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+
 
 <p>Output</p>
-<pre><code class="python">f ke- 0 = 1.0 Ea= 1.0
-f ke- 1 = 9.0 Ea= 8.0
-f ke- 2 = 41.0 Ea= 32.0
-f ke- 3 = 126.33333333333333 Ea= 85.33333333333333
-f ke- 4 = 297.0 Ea= 170.66666666666669
-f ke- 5 = 570.0666666666666 Ea= 273.0666666666666
-f ke- 6 = 934.1555555555556 Ea= 364.08888888888896
-f ke- 7 = 1350.2571428571428 Ea= 416.1015873015872
-f ke- 8 = 1766.35873015873 Ea= 416.1015873015872
-f ke- 9 = 2136.226807760141 Ea= 369.8680776014112
-f ke- 10 = 2432.12126984127 Ea= 295.89446208112895
-f ke- 11 = 2647.317242263909 Ea= 215.195972422639
-f ke- 12 = 2790.781223879002 Ea= 143.46398161509296
-f ke- 13 = 2879.0667510267513 Ea= 88.28552714774924
-f ke- 14 = 2929.515623682608 Ea= 50.448872655856576
-f ke- 15 = 2956.4216890990647 Ea= 26.90606541645684
-f ke- 16 = 2969.874721807293 Ea= 13.45303270822842
-f ke- 17 = 2976.2055607288125 Ea= 6.330838921519444
-f ke- 18 = 2979.0192669161543 Ea= 2.8137061873417224
-f ke- 19 = 2980.2039853108245 Ea= 1.184718394670199
-f ke- 20 = 2980.6778726686925 Ea= 0.47388735786807956
-f ke- 21 = 2980.8584011859757 Ea= 0.18052851728316455
-f ke- 22 = 2980.924047919533 Ea= 0.06564673355751438
-f ke- 23 = 2980.946881565988 Ea= 0.022833646454728296
-f ke- 24 = 2980.9544927814727 Ea= 0.0076112154847578495
-f ke- 25 = 2980.9569283704277 Ea= 0.0024355889549951826
-f ke- 26 = 2980.957677782414 Ea= 0.0007494119863622473
-</code></pre>
+<div class="codehilite"><pre><span></span><span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">0</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">1.0</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">1</span> <span class="o">=</span> <span class="mf">9.0</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">8.0</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">2</span> <span class="o">=</span> <span class="mf">41.0</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">32.0</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">3</span> <span class="o">=</span> <span class="mf">126.33333333333333</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">85.33333333333333</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">4</span> <span class="o">=</span> <span class="mf">297.0</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">170.66666666666669</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">5</span> <span class="o">=</span> <span class="mf">570.0666666666666</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">273.0666666666666</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">6</span> <span class="o">=</span> <span class="mf">934.1555555555556</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">364.08888888888896</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">7</span> <span class="o">=</span> <span class="mf">1350.2571428571428</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">416.1015873015872</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">8</span> <span class="o">=</span> <span class="mf">1766.35873015873</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">416.1015873015872</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">9</span> <span class="o">=</span> <span class="mf">2136.226807760141</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">369.8680776014112</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">10</span> <span class="o">=</span> <span class="mf">2432.12126984127</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">295.89446208112895</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">11</span> <span class="o">=</span> <span class="mf">2647.317242263909</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">215.195972422639</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">12</span> <span class="o">=</span> <span class="mf">2790.781223879002</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">143.46398161509296</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">13</span> <span class="o">=</span> <span class="mf">2879.0667510267513</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">88.28552714774924</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">14</span> <span class="o">=</span> <span class="mf">2929.515623682608</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">50.448872655856576</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">15</span> <span class="o">=</span> <span class="mf">2956.4216890990647</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">26.90606541645684</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">16</span> <span class="o">=</span> <span class="mf">2969.874721807293</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">13.45303270822842</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">17</span> <span class="o">=</span> <span class="mf">2976.2055607288125</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">6.330838921519444</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">18</span> <span class="o">=</span> <span class="mf">2979.0192669161543</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">2.8137061873417224</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">19</span> <span class="o">=</span> <span class="mf">2980.2039853108245</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">1.184718394670199</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">20</span> <span class="o">=</span> <span class="mf">2980.6778726686925</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.47388735786807956</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">21</span> <span class="o">=</span> <span class="mf">2980.8584011859757</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.18052851728316455</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">22</span> <span class="o">=</span> <span class="mf">2980.924047919533</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.06564673355751438</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">23</span> <span class="o">=</span> <span class="mf">2980.946881565988</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.022833646454728296</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">24</span> <span class="o">=</span> <span class="mf">2980.9544927814727</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.0076112154847578495</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">25</span> <span class="o">=</span> <span class="mf">2980.9569283704277</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.0024355889549951826</span>
+<span class="n">f</span> <span class="n">ke</span><span class="o">-</span> <span class="mi">26</span> <span class="o">=</span> <span class="mf">2980.957677782414</span> <span class="n">Ea</span><span class="o">=</span> <span class="mf">0.0007494119863622473</span>
+</pre></div>
+
 
 <p>Jadi, proses perulangan akan berhenti pada iterasi ke-26 karena selisih dari expansi yang dihasilkan mendekati nilai error yang ditentukan yaitu e &lt; 0,001.</p>
 <script type="text/x-mathjax-config">

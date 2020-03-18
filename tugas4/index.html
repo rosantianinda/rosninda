@@ -360,18 +360,12 @@
     Metode Recursive Trapezoid
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#formula-metode-recursive-trapezoid" class="md-nav__link">
     Formula Metode Recursive Trapezoid
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -418,18 +412,12 @@
     Metode Recursive Trapezoid
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#formula-metode-recursive-trapezoid" class="md-nav__link">
     Formula Metode Recursive Trapezoid
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -504,7 +492,7 @@ R(1,0) = \frac{1}{2}R(0,0)+h[f(a+h)]
 <li><em><span><span class="MathJax_Preview">R(0,0)</span><script type="math/tex">R(0,0)</script></span></em> : berdasarkan pada estimasi sebelumnya dan</li>
 <li><em><span><span class="MathJax_Preview">h[f(a)+(h)]</span><script type="math/tex">h[f(a)+(h)]</script></span></em> : berdasarkan pada titik baru</li>
 </ul>
-<h3 id="formula-metode-recursive-trapezoid">Formula Metode Recursive Trapezoid<a class="headerlink" href="#formula-metode-recursive-trapezoid" title="Permanent link">&para;</a></h3>
+<h2 id="formula-metode-recursive-trapezoid">Formula Metode Recursive Trapezoid<a class="headerlink" href="#formula-metode-recursive-trapezoid" title="Permanent link">&para;</a></h2>
 <p>Jadi, dari penjabaran estimasi interval diatas didapatkan formula untuk metode trapesium rekursif seperti berikut :
 $$
 R(0,0) = \frac{b-a}{2}(f(a)+f(b))
@@ -517,7 +505,10 @@ R(n,0) = \frac{1}{2}R(n-1,0)+h\left [\sum_{k=1}^{2^{n-1}}f(a+(2k-1)h) \right ]
 R(n,0) = \frac{1}{2}R(n-1,0)+h\left [\sum_{k=1}^{2^{n-1}}f(a+(2k-1)h) \right ]
 </script>
 </div>
-<p>dengan  <em><span><span class="MathJax_Preview">h=\frac{b-a}{2^n}</span><script type="math/tex">h=\frac{b-a}{2^n}</script></span></em></p>
+<p>dengan  menggunakan
+$$
+h=\frac{b-a}{2^n}
+$$</p>
 <h2 id="pemrograman-integral-trapezoid">Pemrograman Integral Trapezoid<a class="headerlink" href="#pemrograman-integral-trapezoid" title="Permanent link">&para;</a></h2>
 <p><strong>Listing Program</strong> </p>
 <div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">fungsi</span> <span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="p">:</span>

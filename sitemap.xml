@@ -11,16 +11,6 @@
      <changefreq>daily</changefreq>
     </url>
     <url>
-     <loc>https://rosantianinda.github.io/rosninda/tugas2/</loc>
-     <lastmod>2020-06-04</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc>https://rosantianinda.github.io/rosninda/tugas3/</loc>
-     <lastmod>2020-06-04</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
      <loc>https://rosantianinda.github.io/rosninda/tugas4/</loc>
      <lastmod>2020-06-04</lastmod>
      <changefreq>daily</changefreq>
@@ -33,11 +23,6 @@
     <url>
      <loc>https://rosantianinda.github.io/rosninda/tugas6/</loc>
      <lastmod>2020-06-04</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    <url>
-     <loc></loc>
-     
      <changefreq>daily</changefreq>
     </url>
 </urlset>

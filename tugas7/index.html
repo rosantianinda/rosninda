@@ -410,13 +410,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pendekatan-integral-dengan-monte-carlo" class="md-nav__link">
-    Pendekatan Integral dengan Monte Carlo
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#tugas-pemrograman" class="md-nav__link">
     Tugas Pemrograman
   </a>
@@ -460,13 +453,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#pendekatan-integral-dengan-monte-carlo" class="md-nav__link">
-    Pendekatan Integral dengan Monte Carlo
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#tugas-pemrograman" class="md-nav__link">
     Tugas Pemrograman
   </a>
@@ -494,39 +480,85 @@
                 
                 <h1 id="monte-carlo-method">Monte Carlo Method<a class="headerlink" href="#monte-carlo-method" title="Permanent link">&para;</a></h1>
 <p><strong>Metode Monte Carlo</strong> adalah algoritma komputasi yang mengandalkan pengambilan sampel acak berulang untuk mendapatkan hasil numerik. Penggunaan metode ini adalah untuk mengevaluasi integral definit, terutama integral multidimensi dengan syarat dan batasan yang rumit.</p>
-<h2 id="pendekatan-integral-dengan-monte-carlo">Pendekatan Integral dengan Monte Carlo<a class="headerlink" href="#pendekatan-integral-dengan-monte-carlo" title="Permanent link">&para;</a></h2>
-<p>Perkiraan integral dengan metode Monte Carlo untuk memperkirakan area dan volume. Jika elemen <em><span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span></em> pertama <em><span><span class="MathJax_Preview">x_1,x_2,...,x_n</span><script type="math/tex">x_1,x_2,...,x_n</script></span></em> dari urutan acak dalam interval (0,1), maka
-$$
-\int_{0}^{1} f(x)dx\approx \frac{1}{n}\sum_{i=1}^{n}f(x_i)
-$$</p>
-<p>Dimana <em><span><span class="MathJax_Preview">x_i</span><script type="math/tex">x_i</script></span></em> adalah urutan angka acak dalam interval</p>
-<p>$$
-\int_{0}^{1}\int_{0}^{1}\int_{0}^{1}f(x,y,z)dx\, dy\, dz\approx \frac{1}{n}\sum_{i=1}^{n}f(x_i,y_i,z_i)
-$$
-Dimana <em><span><span class="MathJax_Preview">x_1,y_i,z_i</span><script type="math/tex">x_1,y_i,z_i</script></span></em> adalah urutan acak titik <em><span><span class="MathJax_Preview">n</span><script type="math/tex">n</script></span></em> dalam satuan kubus <em><span><span class="MathJax_Preview">0\leq x\leq 1, 0\leq y\leq 1</span><script type="math/tex">0\leq x\leq 1, 0\leq y\leq 1</script></span></em> dan <em><span><span class="MathJax_Preview">0\leq z\leq 1</span><script type="math/tex">0\leq z\leq 1</script></span></em></p>
-<p>Secara umum,
-$$
-\int_{a}f\approx (meansure\, of\, A)\,x\,(average\,of\, f\, over\, n\, random\, points\ in\, A)
-$$
-Dimana rata rata suatu fungsi pada himpunan sama dengan integral fungsi pada himpunan dibagi dengan ukuran himpunan.</p>
+<p>Metode ini terbukti efisien dalam memecahkan persamaan diferensial integral medan radians, sehingga metode ini digunakan dalam perhitungan iluminasi global yang menghasilkan gambar-gambar fotorealistik model tiga dimensi, dimana diterapkan dalam video games, arsitektur, perancangan, film yang dihasilkan oleh komputer, efek-efek khusus dalam film, bisnis, ekonomi, dan bidang lainnya.</p>
 <h2 id="tugas-pemrograman">Tugas Pemrograman<a class="headerlink" href="#tugas-pemrograman" title="Permanent link">&para;</a></h2>
 <ol>
 <li>Buatlah program untuk memverifikasi secara numerik bahwa <em><span><span class="MathJax_Preview">\pi =\int_{0}^{2}(4-x^2)^{1/2}\, dx</span><script type="math/tex">\pi =\int_{0}^{2}(4-x^2)^{1/2}\, dx</script></span></em>. Gunakan metode monte carlo dan 2500 angka acak. </li>
 </ol>
 <p><strong>Listing Program</strong></p>
-<pre class="codehilite"><code class="language-python"></code></pre>
+<pre class="codehilite"><code class="language-python">from scipy import random
+import numpy as np
+import matplotlib.pyplot as plt
+
+a = 0
+b = 2
+N=2500
+
+
+def func(x):
+    return (4-x**2)**0.5
+
+
+area = []
+for i in range(N):
+    xrand = np.zeros(N)
+
+    for i in range(len(xrand)):
+        xrand[i] = random.uniform(a,b)
+        integral = 0.0
+
+    for i in range(N):
+        integral+=func(xrand[i])
+
+    jawab = (b-a)/float(N)*integral
+    area.append(jawab)
+
+plt.title(&quot;Hasil phi&quot;)
+plt.hist(area,bins = 30, ec = 'black')
+plt.xlabel(&quot;Area&quot;)
+plt.show()</code></pre>
 
 
 <p><strong>Output</strong></p>
+<p><img alt="monte carlo" src="..\assets\images\montecarlo.jpeg" /></p>
 <p>2.Gunakan metode monte carlo untuk memperkirakan integral
 $$
 \int_{-1}^{1}\int_{-1}^{1}\int_{-1}^{1}(x^2+y^2+z^2)dx\,dy\,dz
 $$
 <strong>Listing Program</strong></p>
-<pre class="codehilite"><code class="language-python"></code></pre>
+<pre class="codehilite"><code class="language-python">from scipy import random
+import numpy as np
+
+a = -1
+b = 1
+N=100
+xrand=np.zeros(N)
+yrand=np.zeros(N)
+zrand=np.zeros(N)
+integral=0.0
+for i in range(4):
+    for i in range(len(xrand)):
+        xrand[i]=random.uniform(a,b)
+
+    for i in range(len(yrand)):
+        yrand[i]=random.uniform(a,b)
+
+    for i in range(len(zrand)):
+        zrand[i]=random.uniform(a,b)
+
+    def func(x,y,z):
+        return (x**2)+(y**2)+(z**2)
+
+
+    for i in range(N):
+        integral+=func(xrand[i],yrand[i],zrand[i])
+
+jawab=(b-a)/float(N)*integral
+print(&quot;jawab: &quot;,jawab)</code></pre>
 
 
 <p><strong>Output</strong></p>
+<pre class="codehilite"><code class="language-python">jawab:  7.951233160381278</code></pre>
                 
                   
                 
